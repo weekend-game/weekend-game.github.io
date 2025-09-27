@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<title>
+		Weekend game
+	</title>
+	<link rel="stylesheet" type="text/css" href=styles.css>
+</head>
+
+<body>
+	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+		<tr>
+			<td align=center class="title1">CMS
+			</td>
+		</tr>
+		<tr>
+			<td align=center class="menu">
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td align=center class="menu">
+				<a class="link" href="index.htm">Home</a>
+				|
+				<a class="link" href="bankviewer.htm">Bankviewer</a>
+				|
+				<a class="link" href="weekendtexteditor.htm">Weekend text editor</a>
+				|
+				<a class="link" href="weekendinterpreter.htm">Weekend interpreter</a>
+				|
+				<a class="link" href="aspenforest.htm">Game "Aspen Forest"</a>
+				|
+				CMS
+				|
+				<a class="link" href="diary.htm">Diary</a>
+			</td>
+		</tr>
+
+		<tr>
+			<td align=center class="menu">
+				<br>
+				<hr size=1 noshade>
+			</td>
+		</tr>
+	</table>
+
+
+<!-- Info -->
+
+<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+	<tr>
+		<td class="text">
+			<p>
+				<b>Java (11)</b>, <b>Swing</b>, several classes taken from previous
+				projects (<b>GBL</b>, <b>Loc</b>, <b>Mes</b>, <b>Proper</b>)
+			</p>
+			<p>I ran into a problem. On August 23, 2025, while vacationing on
+				the beautiful Mediterranean coast in Side, I designed and
+				implemented a prototype of this website. I planned to publish full
+				descriptions of all my projects there, and everything generally
+				worked out. I came up with a bilingual homepage, decided to dedicate
+				one page per language to each project (repository), and started
+				blogging. But life goes on. New project ideas emerge, and they need
+				their own page on the website. Adding one new page requires changes
+				to all pages of the site. Of course, this is possible, but why?</p>
+			<p>I created my own CMS (content management system) to manage my
+				website. Problem solved! Of course, I could use a ready-made one,
+				but which one? And how long will it take me to master it? Is it
+				possible to create a website exactly as I envisioned, on the
+				Mediterranean coast or something similar? So, the job is done: the
+				CMS is up and running.</p>
+			<p>But this CMS also allowed me to practice working with Java
+				files and creating a Swing user interface, specifically working with
+				text fields, radio buttons, comboboxes, list editing, and bilingual
+				support.</p>
+			<p>
+				Eclipse was used for development. The project is located here: <a
+					class="link" target="_blank"
+					href="https://github.com/weekend-game/weekendcms/">https://github.com/weekend-game/weekendcms/</a>
+				(EN) and here: <a class="link" target="_blank"
+					href="https://gitflic.ru/project/weekend-game/weekendcms/">https://gitflic.ru/project/weekend-game/weekendcms/</a>
+				(RU).
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to run the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Download the repository to your computer. Everything you need
+				for the program is located in the app folder. Navigate to the app
+				folder and run the program by double-clicking the WeekendCMS.jar
+				file or, if the program doesn't start, double-click the
+				WeekendCMS.bat file. If the program doesn't start, download and
+				install Java 11 or later and repeat the steps above.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to open a project in Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>In Eclipse, select "Import..." from the
+				"File" menu. In the window that opens, select "Existing projects
+				into workspace." Navigate to the folder with the downloaded
+				repository and click "Finish." The project will open in Eclipse. In
+				the Package Explorer (on the left side of the screen), double-click
+				the WeekendCMS.java file. The file will open for editing (in the
+				center of the screen). Run the program by pressing Ctrl+F11 or using
+				your preferred method for running programs in Eclipse.</p></td>
+	</tr>
+	<tr>
+		<td class="title2">How to use the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>The program helps you create HTML website pages in a specific
+				style - the style of my website. If you need something different,
+				you'll need to modify the program.</p>
+			<p>
+				To better understand the explanations below, launch the program and
+				open the website you created with it. We see that the website
+				consists of two types of pages: <a class="link" target="_blank"
+					href="https://weekend-game.github.io/">the home page</a> and <a
+					class="link" target="_blank"
+					href="https://weekend-game.github.io/bankviewer.htm">project
+					pages</a>. All project pages are essentially the same.
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title3">Homepage (index.htm)</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>The project name is displayed in large font in the center. In
+				this case, it's my profile name - Weekend Game. If you run the
+				program, you'll see that the window that appears contains several
+				fields. The "Project Name" field controls what's displayed in the
+				center of the home page. At the top of the page is a link to the
+				website for projects and a prompt to send emails to my address. It's
+				written in English. The bottom section contains similar information,
+				but in Russian. The CMS uses the "Website for projects in English",
+				"Website for projects in Russian" and "Email" fields to specify all
+				of these attributes.</p>
+			<p>We can see that above and below the profile name are menu bars
+				with links to the pages of each project (repository). The top
+				section contains links to the English pages, and the bottom section
+				contains links to the Russian pages.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title3">Project (repository) pages</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>The project (repository) page list is defined in the CMS under
+				the "List of pages" section. These are the project pages. Each page
+				has a "Language" setting (EN or RU). This setting determines whether
+				the page link will be located at the top or bottom of the homepage.
+				Links will be generated in the order they appear in the page list.
+				You can change the order using the "Shift up" and "Shift down"
+				buttons located to the right of the list. The "Name" field defines
+				the page title in natural language, and the "File name" field
+				defines the page file name.</p>
+			<p>When generating pages, not only the homepage is generated but
+				also pages for each row in the page list. Each project page will
+				contain a title in large font, taken from the "Name" field. There
+				will also be a menu with links to all pages in English or Russian,
+				depending on the page attribute. The page will have two menu bars:
+				one at the top and one at the bottom. At the very bottom, you will
+				see suggestions for visiting project sites and email addresses. The
+				page content will be taken from a file with the same name, extracted
+				from the folder specified in the "Folder where text files are
+				located" field. For example, to generate the page
+				weekdayinterpreter.htm, you must not only specify it in the page
+				list but also place the weekdayinterpreter description in a file
+				with the same name (weekendinterpreter.htm) and place it in the
+				folder specified in the "Folder where text files are located" field.
+				If such a file is not found, the page weekdayinterpreter.htm will
+				still be created, but with only a header and footer.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title3">Website generation</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>To generate website pages, click the "Generate pages" button.
+				All generated HTML files will be saved in the folder specified in
+				the "Folder for generated pages" field. My CMS does not generate a
+				stylesheet. You should create one manually and place it in a
+				convenient location. You should also take care of the placement of
+				image files yourself.</p>
+			<p class="text">
+				<b>Important!</b> Do not manually edit the generated HTML files
+				located in the pages folder, as they will be overwritten the next
+				time they are generated.
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td id="ProgDescr" class="title2">How the program is written</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>
+				The <b>WeekendCMS</b> class is the main class of the application. It
+				contains a static main() method for launching the program. Its
+				constructor creates everything necessary for operation.
+			</p>
+			<p>
+				First, the Proper.read() method is called. <b>Proper</b> is a class
+				that allows the application to save data between sessions. It saves
+				the location and size of the main window, the preferred interface
+				language, all information from input fields, and page list data. The
+				read() method reads a file with previously saved data. The save()
+				method does the opposite: it writes everything stored in the object
+				to the file. The setProperty(name, value) method saves the value
+				named "name." The getProperty(name, def) method reads the value
+				named "name." If it hasn't been written, the value "def" is
+				returned. The saveBounds() and setBounds() methods are used to save
+				and restore the location and size of the application window.
+			</p>
+			<p>
+				The interface language is then set using the static
+				Loc.setLanguage() method. The <b>Loc</b> class is responsible for
+				internationalization (I18n). After the language is set, the
+				Loc.get() method will return strings in the specified language,
+				provided, of course, that the messages_xx.properties localization
+				file exists, where xx is the language character.
+			</p>
+			<p>
+				A <b>SiteDescriptor</b> class object is created—an object for
+				storing all generated site information. The
+				siteDescriptor.readData() method is immediately called on the
+				created object. This is where the information is read.
+			</p>
+			<p>
+				The application window is created—an object of the JFrame class. The
+				makeJFrame() method is immediately called, in which the user
+				interface components are placed within the application window. The
+				GBL class is used to place them. <b>GBL</b> is a simplified version
+				of the GridBagLayout layout manager, adapted to the needs of the
+				application. There are not many user interface components, but their
+				creation and configuration require a significant amount of text. To
+				simplify matters, everything related to editing the list of pages is
+				separated into a separate class: ListEditor. The <b>ListEditor</b>
+				object creates a page list editor panel, which can be retrieved
+				using the getPanel() method and placed anywhere. Naturally, I'm
+				placing it on the only screen of my application.
+			</p>
+			<p>
+				Next, I initialize the <b>Mes</b> class, which is designed to
+				display various messages using dialog boxes. Mes's methods are
+				static, which creates a certain coupling between the classes in my
+				program. However, I treat it like System.out in Java.
+			</p>
+			<p>Then I call the readFromSiteDescriptor() method, which
+				populates the UI components with the data previously read from
+				SiteDescriptor().</p>
+			<p>
+				The main work is done in the "Generate Pages" button listener. The
+				DoIt() method of the <b>Generator</b> class is called. This method
+				generates site pages based on the available data.
+			</p>
+			<p>You can learn more about how the program works by downloading
+				the project, opening it in Eclipse, reading the class definitions,
+				changing some parameters, running the program, and seeing what
+				happens.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">Results</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Creating even this small CMS has significantly simplified my
+				website management.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">It would be nice...</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>The diary is growing rapidly. I need to archive old posts.</p>
+			<p>I need to create a filter in the diary that will allow me to
+				filter posts by specific projects.</p>
+		</td>
+	</tr>
+</table>
+
+<!-- End of Info -->
+	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+		<tr>
+			<td align=center class="menu">
+				<hr size=1 noshade>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td align=center class="menu">
+				<a class="link" href="index.htm">Home</a>
+				|
+				<a class="link" href="bankviewer.htm">Bankviewer</a>
+				|
+				<a class="link" href="weekendtexteditor.htm">Weekend text editor</a>
+				|
+				<a class="link" href="weekendinterpreter.htm">Weekend interpreter</a>
+				|
+				<a class="link" href="aspenforest.htm">Game "Aspen Forest"</a>
+				|
+				CMS
+				|
+				<a class="link" href="diary.htm">Diary</a>
+			</td>
+		</tr>
+
+		<tr>
+			<td align=center class="menu">
+				<br>
+See my projects at <a class="link" href="https://github.com/weekend-game">https://github.com/weekend-game</a>
+(EN) or <a class="link" href="https://gitflic.ru/user/weekend-game">https://gitflic.ru/user/weekend-game</a> (RU).<br>
+Please write to me at <a class="link" href="mailto:weekend_game@mail.ru">weekend_game@mail.ru</a><br>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+</body>
+
+</html>
