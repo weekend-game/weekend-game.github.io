@@ -10,19 +10,19 @@
 </head>
 
 <body>
-	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+	<table>
 		<tr>
-			<td align=center class="title1">Bankviewer
+			<td class="title1">Bankviewer
 			</td>
 		</tr>
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<br>
 			</td>
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<a class="link" href="index.htm">Home</a>
 				|
 				Bankviewer
@@ -40,7 +40,7 @@
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<br>
 				<hr size=1 noshade>
 			</td>
@@ -50,146 +50,268 @@
 
 <!-- Info -->
 
-<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+<table>
 	<tr>
-		<td class="title2">Class overview</td>
+		<td class="text">
+			<p>
+				<b>Java (11)</b>, <b>Swing</b> (Single document interface)
+			</p>
+			<p>My friend gets bank statements as text files, with data shown
+				as key-value pairs. He puts these files into a system, but sometimes
+				there are issues. The payment date might be strange, the wrong code
+				might be used, or a required field might be missing. Checking the
+				file in a text editor is hard. It would be much better if he could
+				open the file in a program and see the statement as a clear table,
+				with each payment on a separate row. This would easily show all
+				payments, who they're from, who they're to, and all the details.</p>
+			<p>This is exactly what this program does. But it also allows you
+				to understand how to create a menu, toolbar, status bar, context
+				menu, file open dialog, file table display, search, drag &amp; drop,
+				and L&amp;F using a bit of Java and Swing, and put it all together
+				as an SDI.</p>
+			<p>
+				Eclipse was used for development. The project is located here: <a
+					class="link" target="_blank"
+					href="https://github.com/weekend-game/bankviewer/">https://github.com/weekend-game/bankviewer/</a>
+				(EN) and here: <a class="link" target="_blank"
+					href="https://gitflic.ru/project/weekend-game/bankviewer/">https://gitflic.ru/project/weekend-game/bankviewer/</a>
+				(RU).
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to run the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Download the repository to your computer. Everything you need
+				for the program is located in the app folder. Navigate to the app
+				folder and run the program by double-clicking the BankViewer.jar
+				file or, if the program doesn't start, double-click the
+				BankViewer.bat file. If the program doesn't start, download and
+				install Java 11 or later and repeat the steps above.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to open a project in Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>In Eclipse, select "Import..." from the
+				"File" menu. In the window that opens, select "Existing projects
+				into workspace." Navigate to the folder with the downloaded
+				repository and click "Finish." The project will open in Eclipse. In
+				the Package Explorer (on the left side of the screen), double-click
+				the BankViewer.java file. The file will open for editing (in the
+				center of the screen). Run the program by pressing Ctrl+F11 or using
+				your preferred method for running programs in Eclipse.</p>
+			<p>The project includes a separate program called TestGenerator.
+				It is located in the game.weekend.bankviewer.util package. The
+				program allows you to specify the file name and number of bank
+				statement lines, and it will generate a test file for you. The
+				BankStatement1.txt file was generated using TestGenerator.</p></td>
+	</tr>
+	<tr>
+		<td id="HowToUse" class="title2">How to use the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>The program uses a single document interface. This means that
+				upon launch, you'll see the familiar menu, toolbar, empty space in
+				the center of the window for displaying the document, and a status
+				bar at the very bottom.</p>
+			<p>There are three ways to open a bank statement for viewing.</p>
+			<p>The first method is to select "File" - "Open..." from the menu
+				or use the button on the toolbar. This will open a dialog box where
+				you can select a bank statement file, for example, the
+				BankStatement1.txt file available in the repository.</p>
+			<p>The second method is to use the Drag and Drop feature,
+				specifically dragging the bank statement file to the center of the
+				application window.</p>
+			<p>The third method is good for previously opened files. Paths to
+				recently opened files are displayed in the "File" menu. Simply
+				select the desired file, and it will be displayed.</p>
+			<p>To find text on a bank statement, press Ctrl+F, button with
+				the image of binoculars on the toolbar, or select "Find..." from the
+				Edit menu. In the dialog box that opens, enter your search string,
+				select case sensitivity, specify the search direction, and click
+				"Find Next." You can continue searching from the open search window
+				using the toolbar buttons or keyboard shortcuts (Ctrl+G or
+				Ctrl+Shift+G).</p>
+			<p>Some operations can be performed by right-clicking to open the
+				context menu.</p>
+			<p>The application's appearance can be customized using the View
+				menu.</p>
+			<p>First, you can choose your preferred design style. Second, you
+				can hide the toolbar and status bar. You can view your bank
+				statement using only keyboard shortcuts and menu items, but the
+				toolbar and status bar take up space. Third, you can select the
+				interface language: Russian or English.</p>
+			<p>All settings, even the search string, are saved between
+				sessions.</p>
+		</td>
+	</tr>
+	<tr>
+		<td id="ProgDescr" class="title2">How the program is written</td>
 	</tr>
 	<tr>
 		<td class="text">
 			<p>
-				The main class of the application is the <b>BankViewer</b> class.
-				Everything necessary for work is created in its constructor. First
-				of all, this is the application window - an object of the JFrame
-				class. To implement SDI, I use the BorderLayout() layout manager. In
-				the central part, I place the JEditorPane. It will be used to
-				display the bank statement as a table. In the upper part, I place
-				the toolbar, in the lower part - the status bar.
+				The main class of the application is the <b>BankViewer</b> class. It
+				contains the static main() method for launching the program. Its
+				constructor creates everything necessary for operation.
 			</p>
 			<p>
-				The main application window has a menu attached to it. The context
-				menu is attached to the JEditorPane, and, as already mentioned, the
-				toolbar is displayed. All three of these objects are created by
-				methods of the <b>Act</b> class. Each menu item or toolbar button is
-				an object of the Action class. All the necessary Actions are created
-				by methods of the Act class. That is why this is probably the
-				largest class in this program by the number of lines. But it is also
-				probably the simplest class in this program, because all Actions are
-				created in the same way, and the menu and toolbar are just a listing
-				of the necessary Actions in the right order. However, there are some
-				small nuances that are easy to understand by looking at the class
-				text.
+				First, the Proper.read() method is called. The <b>Proper</b> is a
+				class that allows the application to save data between sessions.
+				This saves the location and size of the main window, the preferred
+				interface language, the paths to several recently opened files,
+				whether to display the toolbar and status bar, the last entered
+				search string, and some other data. The read() method reads a file
+				with previously saved data. The save() method does the opposite: it
+				writes everything saved in the object to a file. The
+				setProperty(name, value) method saves the value named "name." The
+				getProperty(name, def) method reads the value named "name." If it
+				hasn't been saved, the value "def" will be returned. The
+				saveBounds() and setBounds() methods are used to save and restore
+				the location and size of the application window.
 			</p>
 			<p>
-				The status bar is an object of the <b>StatusBar</b> class. Actually,
-				the status bar is a JPanel in which three JTextFields are located in
-				a row. The class has three methods for issuing a string message to
-				the corresponding JTextField. The far right field is a little
-				special: the message displayed in it will be visible for 5 seconds,
-				and then it disappears. Of course, the status bar can be infinitely
-				complicated and improved, but for this program such a status bar is
-				quite enough.
+				The interface language is then set using the static
+				Loc.setLanguage() method. The <b>Loc</b> class is responsible for
+				I18n. It works like this: all strings intended for display are
+				written in English, using underscores instead of spaces. The
+				Loc.get(string) method will return strings in the previously set
+				language, provided, of course, the messages_xx.properties
+				localization file is found, where xx is the language convention.
+				Otherwise, underscores in the English phrase will be replaced with
+				spaces, and the first letter will be capitalized. The resulting
+				string will be used for display. For the purposes of this program,
+				this is sufficient.
 			</p>
-			<p>Swing provides the JTable class to display information in the
-				form of a table. But there is another way: JEditorPane, to which the
-				setPage(URL u) method was passed the URL of an HTML file in which
-				the table was formed by the &lt;table&gt; ... &lt;/table&gt; tags. I
-				use the second option. So, the main thing in the program is to
-				convert the original text file "key-value" into an HTML file. Then
-				the HTML file is passed to display the same JeditorPane, which is
-				located in the central part of the main application window.
-				Everything else is the implementation of SDI and ensuring the
-				usability of the program.</p>
+			<p>The application window is created – an object of the JFrame
+				class. The makeJFrame() method is immediately called, creating
+				everything necessary. The main thing is the BorderLayout() layout
+				manager. This will help implement SDI. A JEditorPane will be located
+				in the center section, displaying the bank statement as a table. The
+				toolbar will be located at the top, and the status bar at the
+				bottom.</p>
+			<p>A JEditorPane class panel is created to display a bank
+				statement as a table. The makeJEditorPane() method is immediately
+				called. In this method, the panel is wrapped in a JScrollPane,
+				positioned in the central part of the application window, monitors
+				the selection/deselection of text on the displayed statement, and
+				implements drag-and-drop file opening.</p>
 			<p>
-				The program opens files to display them in a table. Swing provides a
-				ready-made window for specifying the file to be opened: this is the
+				The program opens files to display them like a table. Swing provides
+				a ready-made dialog for specifying the file to open: the
 				javax.swing.JFileChooser class. The <b>Filer</b> class is just a
-				shell around it, allowing you to slightly customize the appearance
+				wrapper around it, allowing you to slightly customize its appearance
 				and behavior.
 			</p>
 			<p>
-				Filer requires an object of the LastFiles class to work. <b>LastFiles</b>,
-				using the Proper class (a wrapper for the java.util.Properties
-				class), stores and can read several special strings when the program
-				is launched - these are the paths to the last opened files. It is
-				very convenient to see them in the File menu and quickly specify the
-				desired one instead of using the file open window. Filer, on the
-				other hand, saves the path to a file in the LastFiles class object
-				every time it successfully opens. If the file is not opened
-				successfully, it deletes such a path from the saved list, if there
-				is one, of course. LastFiles provides the put() and remove() methods
-				for these actions. In addition, there is a getList() method, with
-				the help of which Act forms a fragment of the File menu with a list
-				of the last opened files from the list of paths.
+				The Filer requires a LastFiles class object. <b>LastFiles</b>, using
+				the Proper class, stores and can read several special strings at
+				program startup—the paths to the most recently opened files. It's
+				very convenient to see them in the File menu and quickly select the
+				desired one instead of using the Open File dialog. Each time a file
+				is successfully opened, Filer stores the path in a LastFiles object.
+				If the file is opened unsuccessfully, it removes the path from the
+				saved list, if any. LastFiles provides the put() and remove()
+				methods for these actions. It also has a getList() method, which Act
+				uses to create a File menu fragment with a list of recently opened
+				files from a list of paths.
 			</p>
 			<p>
-				If the user has specified a file, then Filer will call the only
-				public convert() method of the <b>Convertor</b> class in the open()
-				method. This method converts the original file with data in the form
-				of key-value pairs into an HTML file with the same data presented in
-				the form of a table. Then this HTML file will be passed to
-				JEditorPane, which will parse it and display it without any
-				intervention from the programmer.
+				Many Java programs allow the user to customize Look &amp; Fill. This
+				program is no exception. In the "View" menu, the user can select any
+				Look &amp; Fill available in their system. The <b>LaF</b> class
+				helps with this.
 			</p>
 			<p>
-				What Java program does not allow the user to install Look & Fill?
-				This program is no exception. In the "View" menu, the user can
-				select any Look & Fill available in his system. The <b>LaF</b> class
-				helps to work with this.
+				The application contains a menu, a toolbar, and a context menu
+				connected to the JEditorPane. All three of these objects are created
+				by methods of the <b>Act</b> class. Each menu item or toolbar button
+				is an object of the Action class. All necessary Actions are created
+				by methods of the Act class. This is why this is probably the
+				largest class in this program by number of lines. But it is also
+				probably the simplest class in this program, because all Actions are
+				created in the same way, and the menu and toolbar are simply a list
+				of the required Actions in the required order. However, there are
+				some minor nuances that are easy to understand by reading the class
+				text.
 			</p>
 			<p>
-				The <b>Finder</b> class was created to implement the search in the
-				displayed file. <b>FinderFrame</b> is a window for specifying the
-				search string, which is a set of javax.swing components. The search
-				algorithm is implemented in the Finder class. When creating
-				FinderFrame, the problem of placing components arose, and the GBL
-				class was created to solve it. <b>GBL</b> is a simplification of the
-				GridBagLayout layout manager, adapted to the needs of the
+				The status bar is an object of the <b>StatusBar</b> class. The
+				status bar is actually a JPanel containing three JTextFields. The
+				class has three methods for displaying a string message in the
+				corresponding JTextField. The field on the far right is a bit
+				special: the message displayed in it will be visible for 5 seconds,
+				and then it disappears. Of course, the status bar can be endlessly
+				complicated and improved, but for this program, this status bar is
+				quite sufficient.
+			</p>
+			<p>Swing provides the JTable class for displaying information in
+				a table. But there's another option: a JEditorPane, passed the URL
+				of an HTML file containing a table formed by the &lt;table&gt; ...
+				&lt;/table&gt; tags via the setPage(URL u) method. I use the second
+				option. So, the main point of the program is to convert the original
+				key-value text file into an HTML file. The HTML file is then passed
+				to display the JEditorPane, which is located in the center of the
+				application's main window. Everything else is just SDI
+				implementation and ensuring the program's usability.</p>
+			<p>
+				If the user specifies a file, Filer will call the <b>Convertor</b>
+				class's only public method, convert(), in its open() method. This
+				method converts the source file, which contains key-value pairs,
+				into an HTML file containing the same data, presented in a table.
+				This HTML file is then passed to JEditorPane, which parses and
+				displays it without any intervention from the programmer.
+			</p>
+			<p>
+				To implement searching in the displayed file, the <b>Finder</b>
+				class was created. <b>FinderFrame</b> is a window for specifying a
+				search string, representing a set of javax.swing components. The
+				search algorithm is implemented in the Finder class. When creating
+				FinderFrame, the problem of component placement arose, and the <b>GBL</b>
+				class was created to solve this problem. GBL is a simplification of
+				the GridBagLayout layout manager, adapted to the needs of the
 				application.
 			</p>
-			<p>
-				It is worth paying attention to the <b>Proper</b> class. This is a
-				class that is a wrapper for the java.util.Properties class. The
-				read() method reads a file with previously recorded data of an
-				object of the java.util.Properties class. The save() method does the
-				opposite: it writes everything that is placed in the object to a
-				file. The class is needed so that the application can save some data
-				between sessions. This saves the location and size of the main
-				window, paths to several recently opened files, an indicator of
-				whether to display the toolbar, the status bar, the last entered
-				search string, and some other data. For ease of use, a pair of
-				methods have been made: setProperty(name, value) and
-				getProperty(name, def), where value can be a string or an integer.
-				It is clear that the first method saves some value named name, and
-				the second reads the value name, and if it was not written, then the
-				value def will be returned. To write and restore the location and
-				size of the application window, a pair of methods saveBounds() and
-				setBounds() are used.
-			</p>
-			<p>
-				The program has tested internationalization (i18n). The <b>Loc</b>
-				class is used for this. All phrases that are intended for display
-				are written in English using underscores instead of spaces. If the
-				messages_ru.properties file contains a translation for such a
-				phrase, it will be used for display. Otherwise, the underscores in
-				the English phrase will be replaced with spaces, and the first
-				letter will be made capital. And the resulting one will be used for
-				display. For the purposes of this program, this is quite sufficient.
-			</p>
+			<p>You can learn more about the program's operation by
+				downloading the project, opening it in Eclipse, reading the class
+				code, making changes, running the program, and watching the results.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">Results</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>The program turned out to be surprisingly simple and useful.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">It would be nice...</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>It would be nice to be able to change the font size of the
+				displayed bank statement.</p>
 		</td>
 	</tr>
 </table>
 
 <!-- End of info -->
-	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+	<table>
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<hr size=1 noshade>
 				<br>
 			</td>
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<a class="link" href="index.htm">Home</a>
 				|
 				Bankviewer
@@ -207,7 +329,7 @@
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<br>
 See my projects at <a class="link" href="https://github.com/weekend-game">https://github.com/weekend-game</a>
 (EN) or <a class="link" href="https://gitflic.ru/user/weekend-game">https://gitflic.ru/user/weekend-game</a> (RU).<br>

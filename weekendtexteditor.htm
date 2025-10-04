@@ -10,19 +10,19 @@
 </head>
 
 <body>
-	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+	<table>
 		<tr>
-			<td align=center class="title1">Weekend text editor
+			<td class="title1">Weekend text editor
 			</td>
 		</tr>
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<br>
 			</td>
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<a class="link" href="index.htm">Home</a>
 				|
 				<a class="link" href="bankviewer.htm">Bankviewer</a>
@@ -40,37 +40,160 @@
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<br>
 				<hr size=1 noshade>
 			</td>
 		</tr>
 	</table>
 
-	<!-- Info -->
 
-	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
-		<tr>
-			<td class="title2">
-			</td>
-		</tr>
-		<tr>
-			<td class="text">
-			</td>
-		</tr>
-	</table>
+<!-- Info -->
 
-	<!-- End of info -->
-	<table width="80%" align=center border=0 cellpadding=0 cellspacing=0>
+<table>
+	<tr>
+		<td class="text">
+			<p>
+				<b>Java (11)</b>, <b>Swing</b> (Single document interface), <a
+					class="link" target="_blank"
+					href="https://github.com/weekend-game/bankviewer/">BankViewer</a>
+				is used as an application template.
+			</p>
+			<p>So, I created a bank statement viewer. You can create viewers
+				for many other things using a similar approach. But these are just
+				viewers. And if you try to create an editor, you will find that you
+				have to solve many problems. Now I am not creating some unusual
+				editor, I am not creating an editor better than others, I am not
+				trying to compete with anyone. I am researching what problems need
+				to be solved and looking for solutions.</p>
+			<p>This is a regular text editor that allows you to edit simple
+				text files. It has kept all the features already available in
+				BankViewer. But it not only opens existing files, but also creates
+				new ones, saves edited text, makes sure of that you do not lose lose
+				the result of editing, intelligently and sensibly manages the
+				activity of the "Edit" menu items. It can not only search for text,
+				but also replace one text with another. It allows you to set a
+				convenient font size, use a monospace font if it is convenient in
+				any situation.</p>
+			<p>
+				Eclipse was used for development. The project is located here: <a
+					class="link" target="_blank"
+					href="https://github.com/weekend-game/weekendtexteditor/">https://github.com/weekend-game/weekendtexteditor/</a>
+				(EN) and here: <a class="link" target="_blank"
+					href="https://gitflic.ru/project/weekend-game/weekendtexteditor/">https://gitflic.ru/project/weekend-game/weekendtexteditor/</a>
+				(RU).
+			</p>
+		</td>
+	<tr>
+		<td id="HowToUse" class="title2">How to run the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Download the repository to your computer. Everything you need
+				for the program is located in the app folder. Navigate to the app
+				folder and run the program by double-clicking the
+				WeekendTextEditor.jar file or, if the program doesn't start,
+				double-click the WeekendTextEditor.bat file. If the program doesn't
+				start, download and install Java 11 or later and repeat the steps
+				above.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to open a project in Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>In Eclipse, select "Import..." from the
+				"File" menu. In the window that opens, select "Existing projects
+				into workspace." Navigate to the folder with the downloaded
+				repository and click "Finish." The project will open in Eclipse. In
+				the Package Explorer (on the left side of the screen), double-click
+				the WeekendTextEditor.java file. The file will open for editing (in
+				the center of the screen). Run the program by pressing Ctrl+F11 or
+				using your preferred method for running programs in Eclipse.</p></td>
+	</tr>
+	<tr>
+		<td id="HowToUse" class="title2">How to use the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>
+				This text editor is based on the bank statement viewer and inherits
+				its entire user interface (<a class="link" target="_blank"
+					href="https://weekend-game.github.io/bankviewer.htm#HowToUse">
+					see here</a> ). Of course, the opened file is now displayed as a text
+				file, not as a table. New features have been added.
+			</p>
+			<p>The "File" menu now includes the following options: "Create,"
+				"Save," and "Save As." They work the same way as in all programs.</p>
+			<p>The "Edit" menu now includes the "Undo" and "Redo" options.
+				The "Cut" and "Copy" text editing options are active if a text
+				fragment is selected, while the "Paste" option is active only if a
+				copy has been made.</p>
+			<p>A "Replace" option has been added. When selected, a dialog box
+				appears where you can specify a search string, a replacement string,
+				whether to select case, and specify the search direction. The "Find
+				Next" button works the same as in the search window. The "Replace"
+				button replaces the found string with the replacement string. The
+				"Replace All" button will replace all instances of the search string
+				with the replacement string.</p>
+			<p>The "View" menu now includes the following options: "Use
+				monospaced font," "Enlarge font," "Decrease font," and "Default font
+				size."</p>
+		</td>
+	</tr>
+	<tr>
+		<td id="ProgDescr" class="title2">How the program is written</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>
+				The main class of the application is the <b>WeekendTextEditor</b>
+				class. It contains the static main() method for launching the
+				program. Its constructor creates everything necessary for operation.
+			</p>
+			<p>Since this text editor is based on a bank statement viewer, it
+				uses the same objects for its operation. You can learn more about
+				them here. But there are also some new features.</p>
+			<p>
+				The same JEditorPane is used for editing text, but it is now
+				separated into a separate <b>Editor</b> class, which implements many
+				functions. This class contains methods for changing the font and its
+				size, methods for supporting the "Undo" and "Redo" menu items,
+				methods for selecting, copying, and pasting text, and some other
+				functions.
+			</p>
+			<p>
+				The <b>Replacer</b> and <b>ReplacerFrame</b> classes are similar to
+				Finder and FinderFrame, but are designed to perform not only
+				searching but also replacing text.
+			</p>
+			<p>You can learn more about the program's operation by
+				downloading the project, opening it in Eclipse, reading the class
+				code, making changes, running the program, and watching the results.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">Results</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Excellent practice! The editor can be improved endlessly. But
+				you need to know when to stop.</p>
+		</td>
+	</tr>
+</table>
+
+<!-- End of info -->
+	<table>
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<hr size=1 noshade>
 				<br>
 			</td>
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<a class="link" href="index.htm">Home</a>
 				|
 				<a class="link" href="bankviewer.htm">Bankviewer</a>
@@ -88,7 +211,7 @@
 		</tr>
 
 		<tr>
-			<td align=center class="menu">
+			<td class="menu">
 				<br>
 See my projects at <a class="link" href="https://github.com/weekend-game">https://github.com/weekend-game</a>
 (EN) or <a class="link" href="https://gitflic.ru/user/weekend-game">https://gitflic.ru/user/weekend-game</a> (RU).<br>
