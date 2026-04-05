@@ -12,7 +12,7 @@
 <body>
 	<table>
 		<tr>
-			<td class="title1">Простая библиотека
+			<td class="title1">Библиотека редактора
 			</td>
 		</tr>
 		<tr>
@@ -25,9 +25,9 @@
 			<td class="menu">
 				<a class="link" href="index.htm">Главная страница</a>
 				|				<a class="link" href="bankviewer_ru.htm">Просмотрщик банковских выписок</a>
-				|				Простая библиотека
+				|				<a class="link" href="simplelibrary_ru.htm">Простая библиотека</a>
 				|				<a class="link" href="texteditor_ru.htm">Текстовый редактор</a>
-				|				<a class="link" href="editorlibrary_ru.htm">Библиотека редактора</a>
+				|				Библиотека редактора
 				|				<a class="link" href="blog_ru.htm">Блог</a>
 			</td>
 		</tr>
@@ -47,31 +47,27 @@
 	<tr>
 		<td class="text">
 			<p>
-				<b>Java (11)</b>, <b>Swing</b>
+				<b>Java (11)</b>, <b>Swing</b>, <a class="link" target="_blank"
+					href="https://gitflic.ru/project/weekend-game/simplelibrary">SimpleLibrary</a>
 			</p>
 			<p>
-				При создании <a class="link" target="_blank"
-					href="https://gitflic.ru/project/weekend-game/bankviewer/">BankViewer</a>
-				стало понятно, что некоторые классы, которые потребовалось создать
-				для этой программы, будут нужны во многих других подобных
-				программах. Всегда будет необходимо уметь выдавать пользователю
-				сообщение, оснастить приложение статусной панелью, сделать
-				приложение локализованным, сохранять какие-то настройки, работать с
-				Look and Feel, помнить последние открытые файлы, иметь заготовки для
-				часто используемых Actions, а также уметь быстро и удобно размещать
-				поля ввода в окнах. Вот именно всё это и было сосредоточено в пакете
-				game.weekend.simplelibrary при разработке <a class="link"
+				В различных проектах может понадобиться использование простого
+				текстового редактора как части проекта. Текстовый редактор должен не
+				только уметь работать с текстом, но и открывать файлы, сохранять их,
+				а также уметь делать поиск в тексте, замену одних слов (подстрок) на
+				другие. Вот именно всё это и было сосредоточено в пакете
+				game.weekend.editorlibrary при разработке <a class="link"
 					target="_blank"
-					href="https://gitflic.ru/project/weekend-game/bankviewer/">BankViewer</a>.
-				Здесь я вынес этот пакет из BankViewer в отдельный модуль для
+					href="https://gitflic.ru/project/weekend-game/texteditor/">TextEditor</a>.
+				Здесь я вынес этот пакет из TextEditor в отдельный модуль для
 				использования в дальнейших проектах.
 			</p>
 			<p>
 				Для разработки использовался Eclipse. <b>Проект расположен здесь</b>:
 				<a class="link" target="_blank"
-					href="https://github.com/weekend-game/simplelibrary/">https://github.com/weekend-game/simplelibrary/</a>
+					href="https://github.com/weekend-game/editorlibrary/">https://github.com/weekend-game/editorlibrary/</a>
 				(EN) <b>и здесь</b>: <a class="link" target="_blank"
-					href="https://gitflic.ru/project/weekend-game/simplelibrary/">https://gitflic.ru/project/weekend-game/simplelibrary/</a>
+					href="https://gitflic.ru/project/weekend-game/editorlibrary/">https://gitflic.ru/project/weekend-game/editorlibrary/</a>
 				(RU).
 			</p>
 		</td>
@@ -92,16 +88,15 @@
 		<td class="text">
 			<p>Готовая для использования библиотека расположена в папке app.
 				Следует подключить к создаваемому проекту эту библиотеку и в файле
-				module-info проекта указать: requires game.weekend.simplelibrary;.</p>
+				module-info проекта указать: requires game.weekend.editorlibrary;.</p>
 			<p>
-				В папке doc содержится документация, сгенерированная утилитой
-				javadoc. Библиотека очень проста, поэтому можно просто просмотреть
+				Библиотека очень проста, поэтому можно просто просмотреть
 				составляющие её классы. Однако лучшей документацией являются примеры
 				использования классов библиотеки в приложении <a class="link"
 					target="_blank"
-					href="https://gitflic.ru/project/weekend-game/bankviewer/">BankViewer</a>.
+					href="https://gitflic.ru/project/weekend-game/texteditor/">TextEditor</a>.
 				В этом приложении все классы библиотеки расположены в пакете
-				game.weekend.simplelibrary и не оформлены в виде самостоятельного
+				game.weekend.editorlibrary и не оформлены в виде самостоятельного
 				модуля.
 			</p>
 		</td>
@@ -110,8 +105,7 @@
 	</tr>
 	<tr>
 		<td class="text">
-			<p>Надеюсь, что библиотека облегчит разработку дальнейших
-				проектов.</p>
+			<p>Эта библиотека пригодится. И я уже знаю для чего :-).</p>
 		</td>
 	</tr>
 </table>
@@ -130,9 +124,9 @@
 			<td class="menu">
 				<a class="link" href="index.htm">Главная страница</a>
 				|				<a class="link" href="bankviewer_ru.htm">Просмотрщик банковских выписок</a>
-				|				Простая библиотека
+				|				<a class="link" href="simplelibrary_ru.htm">Простая библиотека</a>
 				|				<a class="link" href="texteditor_ru.htm">Текстовый редактор</a>
-				|				<a class="link" href="editorlibrary_ru.htm">Библиотека редактора</a>
+				|				Библиотека редактора
 				|				<a class="link" href="blog_ru.htm">Блог</a>
 			</td>
 		</tr>
