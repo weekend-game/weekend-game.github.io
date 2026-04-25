@@ -7,11 +7,7 @@
 			<p>
 				<b>Java (11)</b>, <b>Swing</b> (Single document interface), <a
 					class="link" target="_blank"
-					href="https://github.com/weekend-game/simplelibrary/">SimpleLibrary</a>,
-				<a class="link" target="_blank"
-					href="https://github.com/weekend-game/editorlibrary/">EditorLibrary</a>,
-				<a class="link" target="_blank"
-					href="https://github.com/weekend-game/texteditor/">TextEditor</a>
+					href="https://github.com/weekend-game/weekendtexteditor/">WeekendTextEditor</a>
 				is used as an application template.
 			</p>
 			<p>Creating your own programming language is a useful thing.
@@ -30,21 +26,21 @@
 				to call it "setting up" accruals and deductions. :-)</p>
 			<p>
 				So, I took my <a class="link" target="_blank"
-					href="https://github.com/weekend-game/texteditor/">text editor</a>
-				and divided its central section into two: the top section contained
-				the editor, and the bottom section contained a panel that would
-				display everything my interpreter outputs. Then I added a "Run" menu
-				with "Run" and "Stop" options. And then I implemented an interpreter
-				for my fictional programming language, <b>Weekend Game Language</b>
-				(default file extension: <b>WGL</b>), which executes the program
-				opened or written in the editor.
+					href="https://github.com/weekend-game/weekendtexteditor/">text
+					editor</a> and divided its central section into two: the top section
+				contained the editor, and the bottom section contained a panel that
+				would display everything my interpreter outputs. Then I added a
+				"Run" menu with "Run" and "Stop" options. And then I implemented an
+				interpreter for my fictional programming language, <b>Weekend
+					Game Language</b> (default file extension: <b>WGL</b>), which executes
+				the program opened or written in the editor.
 			</p>
 			<p>
 				Eclipse was used for development. The project is located here: <a
 					class="link" target="_blank"
-					href="https://github.com/weekend-game/interpreter/">https://github.com/weekend-game/interpreter/</a>
+					href="https://github.com/weekend-game/weekendinterpreter/">https://github.com/weekend-game/weekendinterpreter/</a>
 				(EN) and here: <a class="link" target="_blank"
-					href="https://gitflic.ru/project/weekend-game/interpreter/">https://gitflic.ru/project/weekend-game/interpreter/</a>
+					href="https://gitflic.ru/project/weekend-game/weekendinterpreter/">https://gitflic.ru/project/weekend-game/weekendinterpreter/</a>
 				(RU).
 			</p>
 		</td>
@@ -55,10 +51,11 @@
 		<td class="text">
 			<p>Download the repository to your computer. Everything you need
 				for the program is located in the app folder. Navigate to the app
-				folder and run the program by double-clicking the Interpreter.jar
-				file or, if the program doesn't start, double-click the
-				Interpreter.bat file. If the program doesn't start, download and
-				install Java 11 or later and repeat the steps above.</p>
+				folder and run the program by double-clicking the
+				WeekendInterpreter.jar file or, if the program doesn't start,
+				double-click the WeekendInterpreter.bat file. If the program doesn't
+				start, download and install Java 11 or later and repeat the steps
+				above.</p>
 		</td>
 	</tr>
 	<tr>
@@ -70,9 +67,9 @@
 				into workspace." Navigate to the folder with the downloaded
 				repository and click "Finish." The project will open in Eclipse. In
 				the Package Explorer (on the left side of the screen), double-click
-				the Interpreter.java file. The file will open for editing (in the
-				center of the screen). Run the program by pressing Ctrl+F11 or using
-				your preferred method for running programs in Eclipse.</p></td>
+				the WeekendInterpreter.java file. The file will open for editing (in
+				the center of the screen). Run the program by pressing Ctrl+F11 or
+				using your preferred method for running programs in Eclipse.</p></td>
 	</tr>
 	<tr>
 		<td id="HowToUse" class="title2">How to use the program</td>
@@ -213,17 +210,14 @@ END</pre>
 		<td class="text">
 			<p>
 				The interpreter is built on a previously created <a class="link"
-					target="_blank" href="https://github.com/weekend-game/texteditor">text
+					target="_blank"
+					href="https://github.com/weekend-game/weekendtexteditor">text
 					editor</a> as an extension of the text editor, allowing it to execute
 				the file being edited, provided that the file contains a program.
-				The most important functions of the text editor were moved to the <a
-					class="link" target="_blank"
-					href="https://github.com/weekend-game/editorlibrary/">EditorLibrary</a>,
-				which significantly simplified development. The interpreter is
-				fairly self-contained (game.weekend.interpreter.core package). The
-				editor provides it only with the name of the current file and a
-				panel for displaying messages and text output by the PRINT language
-				command.
+				The interpreter is fairly self-contained (game.weekend.interpreter
+				package). The editor provides it only with the name of the current
+				file and a panel for displaying messages and text output by the
+				PRINT language command.
 			</p>
 			<p>The interpreter is launched using the Runner.run() method.
 				This method opens the current editor file and creates an Interpreter
@@ -259,8 +253,8 @@ END</pre>
 				<b>Assignment</b>
 			</p>
 			<p>So, if the token is a variable, we read the next token and
-				expect it to be a delimiter (DELIMITER), specifically the "="
-				symbol. If it isn't, there's an error. If so, we read the following
+				expect it to be a delimiter (DELIMITER), specifically the = symbol.
+				If it isn't, there's an error. If so, we read the following
 				expression using the Expressions.getExp() method. Generally,
 				whenever we expect an expression to follow, we call the
 				Expressions.getExp() method.</p>
@@ -424,4 +418,3 @@ END</pre>
 </table>
 
 <!-- End of info -->
-
