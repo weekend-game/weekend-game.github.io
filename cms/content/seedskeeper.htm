@@ -1,0 +1,201 @@
+<!-- Info -->
+
+<table>
+	<tr>
+		<td class="text">
+			<p>
+				<b>Java (11)</b>, <a class="link" target="_blank"
+					href="https://openjfx.io/">JavaFX</a> (Tabbed document interface),
+				DBMS <a class="link" target="_blank"
+					href="https://db.apache.org/derby/">Apache Derby</a>
+			</p>
+			<p>My wife gave me the idea for this app. She grows tomatoes,
+				peppers, and other plants as a hobby. She buys packets of seeds and
+				grows a few plants of each variety. Often, she has leftover seeds,
+				and sometimes we buy a variety but can't plant it that season. We're
+				programmers, not farmers, and we have very little space to grow
+				tomatoes.</p>
+			<p>So, she accumulated several thousand packets of seeds, and we
+				need to track them on our computer. A spreadsheet is impossible: the
+				plant photos alone take up over 10 GB. A spreadsheet would do the
+				job, but it would be incredibly slow. So my wife came up with a
+				program to track these thousands of packets.</p>
+			<p>
+				And I need to practice with the database (<b>Apache Derby</b>), try
+				out a development new type of user interface (<b>Tabbed document
+					interface</b>), a new UI development kit (<b>JavaFX</b>), and figure
+				out how to create such a program in a few thousand lines. At the
+				same time, the conciseness of the code must not compromise the user
+				interface and the necessary functionality.
+			</p>
+			<p>
+				Eclipse was used for development. The project is located here: <a
+					class="link" target="_blank"
+					href="https://github.com/weekend-game/seedskeeper/">https://github.com/weekend-game/seedskeeper/</a>
+				(EN) and here: <a class="link" target="_blank"
+					href="https://gitflic.ru/project/weekend-game/seedskeeper/">https://gitflic.ru/project/weekend-game/seedskeeper/</a>
+				(RU).
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to run the program</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Download the repository to your computer. Everything you need
+				for the program is located in the app folder. Navigate to the app
+				folder and run the program by double-clicking the SeedsKeeper.jar
+				file or, if the program doesn't start, double-click the
+				SeedsKeeper.bat file. If the program doesn't start, download and
+				install Java 11 or later and repeat the steps above.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">How to open a project in Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>In Eclipse, select "Import..." from the
+				"File" menu. In the window that opens, select "Existing projects
+				into workspace." Navigate to the folder with the downloaded
+				repository and click "Finish." The project will open in Eclipse. In
+				the Package Explorer (on the left side of the screen), double-click
+				the SeedKeeper.java file. The file will open for editing (in the
+				center of the screen). Run the program by pressing Ctrl+F11 or using
+				your preferred method for running programs in Eclipse.</p></td>
+	</tr>
+	<tr>
+		<td class="text"><p>I should note that this project will
+				require several third-party libraries. That's why I decided to
+				create a Maven project rather than just an Eclipse project. The
+				project is already created, so you don't need to create anything
+				else, unless you're working on a new project. But I'll describe it
+				just in case.</p></td>
+	</tr>
+	<tr>
+		<td id="HowToCreate" class="title2">How to Create a Maven Project
+			in Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>Select File – New – Maven Project from
+				the menu. The "New Maven Project" window will appear.</p></td>
+	</tr>
+	<tr>
+		<td class="text"><p>Check the "Create a simple project"
+				checkbox.</p></td>
+	</tr>
+	<tr>
+		<td class="text"><p>Uncheck the "Use default Workspace
+				location" checkbox and specify the project folder in the "Location"
+				field. For example: C:\Dropbox\Weekend game\SeedsKeeper. Click
+				"Next".</p></td>
+	</tr>
+	<tr>
+		<td class="text"><p>On the next page, specify:</p> <pre
+				class="prog">
+	Artifact Id: SeedsKeeper
+	Version: 0.1.0
+	Packaging: jar
+	Name: SeedsKeeper
+	Description: Accounting of seeds
+</pre></td>
+	</tr>
+	<tr>
+		<td class="text"><p>Click "Finish".</p></td>
+	</tr>
+	<tr>
+		<td class="text"><p>A SeedsKeeper folder will be created in
+				the C:\Dropbox\Weekend game\ folder, and the project files will be
+				placed there.</p></td>
+	</tr>
+	<tr>
+		<td class="text"><p>Eclipse creates the project for Java 8.
+				At least, that's how it worked for me. To use Java 11, open the
+				project properties window and, on the "Java Build Path" page, in the
+				"Libraries" tab, remove the "JRE System Library [JavaSE-1.8]" line.
+				On the right, click the Add library... button, select JRE System
+				Library, click the "Execution environment" radio button, and select
+				the desired version of "Java (11.0.10)." Then, add all the necessary
+				dependencies to the pom.xml file.</p> <pre class="prog">
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId>org.openjfx&lt;/groupId&gt;
+            &lt;artifactId>javafx-controls&lt;/artifactId&gt;
+            &lt;version>11.0.2&lt;/version>&gt;
+        &lt;/dependency&gt;
+
+        ...
+
+    &lt;/dependencies&gt;
+</pre></td>
+	</tr>
+
+	<tr>
+		<td class="title2">DBMS</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>
+				<b>Choosing a DBMS</b>
+			</p>
+			<p>When choosing a DBMS, I considered the following:</p>
+			<ul>
+				<li>The DBMS should be able to be embedded into the
+					application. Launching any additional programs before using my
+					application would somewhat detract from the user's enjoyment of
+					viewing their seed collection.</li>
+				<li>My program is written in Java, and the DBMS should be
+					written in Java. Of course, you can make anything work with Java,
+					but I don't want to waste time on that.</li>
+				<li>I know SQL and would like to use it, not anything else,
+					which means the DBMS should be relational.</li>
+				<li>I should use the first DBMS I come across that meets my
+					first three requirements, since my goal is to create a crop
+					tracking program, not to study the current state of the DBMS
+					market.</li>
+			</ul>
+			<p>
+				I chose <a class="link" target="_blank"
+					href="https://db.apache.org/derby/">Apache Derby</a>. A large
+				amount of high-quality documentation on this DBMS can be found on
+				the Derby website. But to create a seed tracking application, I
+				needed the following.
+			</p>
+			<p>
+				<b>Installing Derby requires:</b>
+			</p>
+			<ul>
+				<li>Download the DBMS files and place them in a folder. I'm
+					running Windows 10 and using Java 11, so I chose version 10.15.2.0,
+					which I downloaded and placed in the C:\Programs\Derby\ folder.</li>
+				<li>Create the DERBY_HOME system variable with the path to the
+					DBMS. I used C:\Programs\Derby.</li>
+				<li>Add %DERBY_HOME%\bin to the PATH system variable.</li>
+			</ul>
+			<p>
+				<b>Creating and Working with a Database</b>
+			</p>
+			<ul>
+				<li>Run a command prompt in the folder where you want to store
+					the database. The repository includes the dos.bat file for this.</li>
+				<li>Run the Derby ij utility. To do this, enter: java -jar
+					"%DERBY_HOME%/lib/derbyrun.jar" ij</li>
+				<li>Create or connect to the db database. To do this, enter:
+					CONNECT 'jdbc:derby:db;user=user;create=true';</li>
+				<li>You can enter any SQL commands here, and they will be
+					executed by the DBMS. For example, you can run the script for
+					creating database tables with the command: RUN 'create_tables.sql'</li>
+				<li>Exit the Derby ij utility. To do this, enter: EXIT;</li>
+			</ul>
+			<p>Don't forget to include the ; after each command.</p>
+			<p>The application's interaction with the database will be based
+				on JDBC. I don't see any point in using an ORM, such as Hibernate,
+				for such a simple application that will use no more than a dozen
+				tables.</p>
+		</td>
+	</tr>
+
+</table>
+
+<!-- End of Info -->
+
