@@ -1,0 +1,121 @@
+<!-- Info -->
+
+<table>
+	<tr>
+		<td class="text">
+			<p>
+				<b>Java (11)</b>, <a class="link" target="_blank"
+					href="https://openjfx.io/">JavaFX</a> (Многодокументный интерфейс с
+				вкладками), СУБД <a class="link" target="_blank"
+					href="https://db.apache.org/derby/">Apache Derby</a>
+			</p>
+			<p>Идея создания такого приложения полностью принадлежит моей
+				жене. Она, в качестве хобби, выращивает помидоры, перцы (это её
+				любимое) и прочие растения. Покупает пакетики с семенами и
+				выращивает по несколько кустов каждого сорта. Часто семена из
+				пакетика остаются, часто сорт покупается, но посадить их в этом
+				сезоне не получается. Мы же программисты, а не фермеры, и площадь
+				для выращивания помидоров у нас очень небольшая.</p>
+			<p>Так вот, пакетиков с семенами набралось уже несколько тысяч, и
+				они требуют компьютерного учёта. Использовать электронную таблицу не
+				получается: только фото растений занимают более 10 Гб. Электронная
+				таблица с этим справляется, но очень медленно работает. Вот она и
+				придумала программу, которая поможет вести учёт этих тысяч
+				пакетиков.</p>
+			<p>
+				А мне нужно попрактиковаться с БД (<b>Apache Derby</b>), попробовать
+				разработку нового типа UI (<b>Многодокументный интерфейс с
+					вкладками</b>), попробовать новый пакет (<b>JavaFX</b>) и придумать,
+				как сделать такую программу, уложившись в несколько тысяч строк. При
+				этом лаконичность кода программы не должна достигаться за счёт
+				упрощения UI и необходимой функциональности.
+			</p>
+			<p>
+				Для разработки использован Eclipse. Проект расположен здесь: <a
+					class="link" target="_blank"
+					href="https://github.com/weekend-game/seedskeeper/">https://github.com/weekend-game/seedskeeper/</a>
+				(EN) и здесь: <a class="link" target="_blank"
+					href="https://gitflic.ru/project/weekend-game/seedskeeper/">https://gitflic.ru/project/weekend-game/seedskeeper/</a>
+				(RU).
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">Как запустить программу</td>
+	</tr>
+	<tr>
+		<td class="text">
+			<p>Скачайте репозиторий на свой компьютер. Всё необходимое для
+				работы программы расположено в папке app. Зайдите в папку app и
+				запустите программу двойным кликом по SeedsKeeper.jar или, если она
+				не запускается, двойным кликом по SeedsKeeper.bat. Если и последнее
+				не запускает программу, то скачайте и установите Java 11 или новее и
+				снова попробуйте способы, описанные выше.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="title2">Как открыть проект в Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>В Eclipse, в меню выберите File -
+				Import... В появившемся окне выберите Existing Projects into
+				Workspace. Укажите папку скачанного вами репозитория и нажмите
+				кнопку Finish. Проект откроется в Eclipse. В Package Explorer (в
+				левой части экрана) дважды кликните на файле SeedKeeper.java. Файл
+				откроется для редактирования (в центральной части экрана). Запустите
+				программу на выполнение, нажав Ctrl+F11 или так, как вам удобно
+				запускать программы в Eclipse.</p>
+			<p>Должен отметить, что в этом проекте понадобятся несколько
+				библиотек сторонних разработчиков. Поэтому я решил создать не просто
+				Eclipse-проект, а Maven-проект. Вообще-то проект уже создан, и
+				ничего больше создавать не нужно, разве что для какого-то нового
+				проекта. Но на всякий случай опишу.</p></td>
+	</tr>
+	<tr>
+		<td id="HowToCreate" class="title2">Как создать Maven-проект в
+			Eclipse</td>
+	</tr>
+	<tr>
+		<td class="text"><p>Выберите в меню File – New – Maven
+				Project. Появится окно New Maven Project.</p>
+			<p>Установите флажок "Create a simple project (skip archerype selection)".</p>
+			<p>Снимите флажок "Use default Workspace location" и укажите в
+				поле "Location" папку проекта. Например: C:\Dropbox\Weekend
+				game\SeedsKeeper (На момент создания проекта его пака уже должна быть
+				создана). Нажмите кнопку "Next".</p>
+			<p>На следующей странице укажите:</p> <pre class="prog">
+	Artifact Id: SeedsKeeper
+	Version: 0.1.0
+	Packaging: jar
+	Name: SeedsKeeper
+	Description: Accounting of seeds
+</pre></td>
+	</tr>
+	<tr>
+		<td class="text"><p>Нажмите кнопку "Finish".</p>
+			<p>В папке C:\Dropbox\Weekend game\SeedsKeeper будут размещены файлы проекта.</p>
+			<p>Eclipse создаёт проект для Java 8. Во всяком случае, у меня
+				было именно так. Чтобы использовать Java 11, следует открыть окно
+				свойств проекта и на странице "Java Build Path" на вкладке
+				"Libraries" удалить строку "JRE System Library [JavaSE-1.8]". Справа
+				нажмите кнопку Add library..., выберите JRE System Library, нажмите
+				радиокнопку Execution environment и укажите нужную версию "Java
+				(11.0.10)". Затем следует добавить в файл pom.xml все необходимые
+				зависимости.</p> <pre class="prog">
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId>org.openjfx&lt;/groupId&gt;
+            &lt;artifactId>javafx-controls&lt;/artifactId&gt;
+            &lt;version>11.0.2&lt;/version>&gt;
+        &lt;/dependency&gt;
+
+        ...
+
+    &lt;/dependencies&gt;
+</pre></td>
+	</tr>
+
+</table>
+
+<!-- End of Info -->
+
